@@ -72,7 +72,7 @@ class CustomConfig(Config):
     NUM_CLASSES = 1 + 1  # Background + beagle
 
     # Number of training steps per epoch
-    STEPS_PER_EPOCH = 100
+    STEPS_PER_EPOCH = 20
 
     # Skip detections with < 90% confidence
     DETECTION_MIN_CONFIDENCE = 0.9
@@ -198,7 +198,7 @@ def train(model):
     print("Training network heads")
     model.train(dataset_train, dataset_val,
                 learning_rate=config.LEARNING_RATE,
-                epochs=10,
+                epochs=200,
                 layers='heads')
 
 
